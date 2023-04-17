@@ -124,6 +124,15 @@ export class AddTransaction extends Component {
                   </div>
                     </div>
                     <div className="form-group">
+                      <label>Amount</label>
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <div className="input-group-text">$</div>
+                        </div>
+                        <input type="text" className="form-control currency" />
+                      </div>
+                    </div>
+                    <div className="form-group">
                       <div className="control-label">Share Percentage</div>
                       <div className="custom-switches-stacked mt-2">
                         <label className="custom-switch">
