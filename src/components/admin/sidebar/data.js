@@ -15,13 +15,13 @@ export const Data = {
         {
             name: 'Add New Transaction',
             icon: 'far fa-square',
-            url: "/add"
+            url: "/transactions/addtransaction"
 
         },
         {
             name: 'View Transactions',
             icon: 'fas fa-th',
-            url: "/view"
+            url: "/transactions/mytransactions"
 
         },
         {
@@ -31,14 +31,13 @@ export const Data = {
         {
             name: 'Add New Friend',
             icon: 'fas fa-pencil-ruler',
-            url: "/friends/add"
+            url: "/friends/addfriend"
         },
         {
             name: 'My Friends',
             icon: 'fas fa-ellipsis-h',
             url: "/friends/myfriends"
         },
-        
         
         {
             header: true,

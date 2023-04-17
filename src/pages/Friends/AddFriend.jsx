@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import AdvanceForm from "../../js/FormAdvanced";
 
+
+function handleSubmit() {
+    window.location = '/friends/myfriends';
+  };
+
 export class AddFriend extends Component {
   
   render() {
@@ -46,7 +51,7 @@ export class AddFriend extends Component {
                     </div>
                   </div>
                   <div className="card-footer text-center">
-                      <button className="btn btn-primary">Add Friend</button>
+                      <button className="btn btn-primary" onClick={() => handleSubmit()}>Add Friend</button>
                     </div>
                 </div>
                

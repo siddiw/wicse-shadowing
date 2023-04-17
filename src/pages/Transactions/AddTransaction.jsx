@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import AdvanceForm from "../../js/FormAdvanced";
 
+function handleSubmit() {
+  window.location = '/transactions/mytransactions';
+};
+
 export class AddTransaction extends Component {
-  // componentDidMount() {
-  //   AdvanceForm();
-  // }
+
+
   render() {
     return (
       <div className="main-content">
@@ -110,7 +113,8 @@ export class AddTransaction extends Component {
                    
                   </div>
                   <div className="card-footer text-center">
-                      <button className="btn btn-primary">Submit</button>
+                      <button className="btn btn-primary" type="submit" onClick={() => handleSubmit()}>
+                      Submit </button>
                     </div>
                  </div>
                 </div>
