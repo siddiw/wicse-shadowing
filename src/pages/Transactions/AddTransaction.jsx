@@ -1,11 +1,29 @@
 import React, { Component } from "react";
 import AdvanceForm from "../../js/FormAdvanced";
 
+
+const paidby = [
+  { name: 'Me' },
+  { name: 'Nayan' }
+];
+
+const sharewith = [
+  { name: 'Nayan' },
+  { name: 'B' }
+];
+
 function handleSubmit() {
   window.location = '/transactions/mytransactions';
 };
 
 export class AddTransaction extends Component {
+  state = {
+    paidby: false,
+    sharewith: false,
+  }
+  toggle = () => this.setState((currentState) => ({paidby: !currentState.show}));
+
+  toggleshare = () => this.setState((currentState) => ({sharewith: !currentState.show}));
 
 
   render() {
@@ -43,8 +61,32 @@ export class AddTransaction extends Component {
                           <i className="fas fa-search"></i>
                           </div>
                         </div>
-                        <input type="text" className="form-control currency" />
+                        <input type="text" className="form-control currency" onClick={this.toggle}/>
                       </div>
+                      <div className="search-result">
+                    {this.state.paidby && 
+                    
+                    <div> {paidby.map(item => (
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          // id="defaultCheck1"
+                        />
+                        <label
+                          className="form-check-label"
+                          // htmlFor="defaultCheck1"
+                        >
+                          {item.name}
+                        </label>
+                      </div>
+                      // <p>{item.name}</p>
+                    ))}
+                    </div>
+                    
+                    
+                    }
+                  </div>
                     </div>
                     <div className="form-group">
                       <label>Share With</label>
@@ -54,8 +96,32 @@ export class AddTransaction extends Component {
                           <i className="fas fa-search"></i>
                           </div>
                         </div>
-                        <input type="text" className="form-control currency" />
+                        <input type="text" className="form-control currency" onClick={this.toggleshare}/>
                       </div>
+                      <div className="search-result">
+                    {this.state.sharewith && 
+                    
+                    <div> {sharewith.map(item => (
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          // id="defaultCheck1"
+                        />
+                        <label
+                          className="form-check-label"
+                          // htmlFor="defaultCheck1"
+                        >
+                          {item.name}
+                        </label>
+                      </div>
+                      // <p>{item.name}</p>
+                    ))}
+                    </div>
+                    
+                    
+                    }
+                  </div>
                     </div>
                     <div className="form-group">
                       <div className="control-label">Share Percentage</div>

@@ -1,12 +1,20 @@
 import React, { Component } from "react";
-import AdvanceForm from "../../js/FormAdvanced";
 
+const data = [
+  { name: 'A' },
+  { name: 'B' }
+];
 
 function handleSubmit() {
     window.location = '/friends/myfriends';
   };
 
 export class AddFriend extends Component {
+  state = {
+    show: false,
+  }
+  toggle = () => this.setState((currentState) => ({show: !currentState.show}));
+
   
   render() {
     return (
@@ -46,16 +54,42 @@ export class AddFriend extends Component {
                           <i className="fas fa-search"></i>
                           </div>
                         </div>
-                        <input type="text" className="form-control currency" />
+                        <input type="text" className="form-control currency" onClick={this.toggle}/>
                       </div>
                     </div>
+                    <div className="search-result">
+                    {this.state.show && 
+                    
+                    <div> {data.map(item => (
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          // id="defaultCheck1"
+                        />
+                        <label
+                          className="form-check-label"
+                          // htmlFor="defaultCheck1"
+                        >
+                          {item.name}
+                        </label>
+                      </div>
+                      // <p>{item.name}</p>
+                    ))}
+                    </div>
+                    
+                    
+                    }
                   </div>
+                  </div>
+
                   <div className="card-footer text-center">
                       <button className="btn btn-primary" onClick={() => handleSubmit()}>Add Friend</button>
                     </div>
                 </div>
                
               </div>
+             
             </div>
           </div>
         </section>
