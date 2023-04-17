@@ -68,6 +68,9 @@ import CompTab from "./pages/Components/CompTab";
 import CompTable from "./pages/Components/CompTable";
 import CompUser from "./pages/Components/CompUser";
 import MyFriends from "./pages/Friends/MyFriends";
+import AddFriend from "./pages/Friends/AddFriend";
+import AddTransaction from "./pages/Transactions/AddTransaction";
+import Transaction from "./pages/Transactions/Transactions";
 import CompWizard from "./pages/Components/CompWizard";
 import AdvancedRoute from "./pages/Google Maps/AdvancedRoute";
 import DraggableMarker from "./pages/Google Maps/DraggableMarker";
@@ -229,6 +232,9 @@ function App() {
           <Route path="/form/editor" component={FormEditor} />
           <Route path="/form/validation" component={FormValidation} />
           <Route path="/friends/myfriends" component={MyFriends} />
+          <Route path="/friends/addfriend" component={AddFriend} />
+          <Route path="/transactions/addtransaction" component={AddTransaction} />
+          <Route path="/transactions/mytransactions" component={Transaction} />
           <Route path="/google-maps/advance-route" component={AdvancedRoute} />
           <Route
             path="/google-maps/draggable-marker"
